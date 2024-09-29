@@ -29,7 +29,14 @@ public class MyArrays{
   }
 
   public static int[] concatArray(int[]ary1,int[]ary2) {
-    return new int[] {};
+    int[] glue = new int[ary1.length + ary2.length];
+    for (int i = 0; i < ary1.length; i++) {
+      glue[i] = ary1[i];
+    }
+    for (int i = ary1.length; i < glue.length; i++) {
+      glue[i] = ary2[i-ary1.length];
+    }
+    return glue;
   }
 
   public static void testConcatArray(int[] bry1, int[]bry2) {
@@ -52,8 +59,7 @@ public class MyArrays{
     int[] ary5 = {2,3,4, 3, 3, 2, 2, 2, 2};
     testReturnCopy(ary5);
 
-    //test cases for returnCopy
-
+    //test cases for concatArray
     testConcatArray(new int[] {223432,34,2,0}, new int[] {6,8,6} );
     testConcatArray(new int[] {2,0,0,0,0,0,0,2}, new int[] {} );
     testConcatArray(new int[] {}, new int[] {6,8,6} );
