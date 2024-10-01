@@ -25,6 +25,9 @@ public static String arrToString(int[][]ary){
   String s = "[";
   for (int i = 0; i < ary.length; i++) {
     s += arrToString(ary[i]);
+    if (i != ary.length -1) {
+      s += ", ";
+    }
   }
   return s + "]";
 }
