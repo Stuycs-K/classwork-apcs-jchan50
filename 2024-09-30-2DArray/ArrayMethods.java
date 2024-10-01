@@ -34,7 +34,13 @@ public static String arrToString(int[][]ary){
 
 /*Return the sum of all of the values in the 2D array */
 public static int arr2DSum(int[][]nums){
-  return 0;
+  int sum = 0;
+  for (int i = 0; i < nums.length; i++) {
+    for (int j = 0; j < nums[i].length; j++) {
+      sum += nums[i][j];
+    }
+  }
+  return sum;
 }
 
 /**Rotate an array by returning a new array with the rows and columns swapped.
@@ -49,6 +55,10 @@ public static void main(String[] args) {
   //test cases for arrToSTring
   System.out.println("Expected: [[2, 3, 4], [5, 6, 7], [2, 4, 9]]. output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
   System.out.println("Expected: [[], [5, 6], [2, 4, 9]]. output: " + arrToString(new int[][] {{}, {5, 6}, {2, 4, 9}}));
+
+  //test cases for arr2DSum
+  System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
+  System.out.println("Expected: 26 output: " + arr2DSum(new int[][] {{}, {5, 6}, {2, 4, 9}}));
 }
 
 }
