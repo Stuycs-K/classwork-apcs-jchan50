@@ -27,7 +27,7 @@ public static String arrToString(int[][]ary){
 
 /*Return the sum of all of the values in the 2D array */
 public static int arr2DSum(int[][]nums){
-  //use a nested loop to solve this
+  return 0;
 }
 
 /**Rotate an array by returning a new array with the rows and columns swapped.
@@ -38,5 +38,10 @@ public static int[][] swapRC(int[][]nums){
   return new int[1][1];
 }
 
+public static void main(String[] args) {
+  //test cases for arrToSTring
+  System.out.println("Expected: [[2, 3, 4], [5, 6, 7], [2, 4, 9]]. output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
+  System.out.println("Expected: [[], [5, 6], [2, 4, 9]]. output: " + arrToString(new int[][] {{}, {5, 6}, {2, 4, 9}}));
 }
 
+}
