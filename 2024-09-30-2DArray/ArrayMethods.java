@@ -48,17 +48,30 @@ public static int arr2DSum(int[][]nums){
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
 public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+  int[][] newArr = new int[nums[0].length][nums.length];
+  for (int i = 0; i < newArr.length; i++) {
+    for (int j = 0; j < newArr[i].length; j++) {
+      newArr[i][j] = nums[j][i];
+    }
+  }
+  return newArr;
 }
 
 public static void main(String[] args) {
   //test cases for arrToSTring
   System.out.println("Expected: [[2, 3, 4], [5, 6, 7], [2, 4, 9]]. output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
   System.out.println("Expected: [[], [5, 6], [2, 4, 9]]. output: " + arrToString(new int[][] {{}, {5, 6}, {2, 4, 9}}));
+  System.out.println("Expected: [[2, 3, 4], [5, 6, 7], [2, 4, 9], [0, 0, 0]]. output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
 
   //test cases for arr2DSum
   System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
   System.out.println("Expected: 26 output: " + arr2DSum(new int[][] {{}, {5, 6}, {2, 4, 9}}));
+  System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
+  System.out.println("Expected: 0 output: " + arr2DSum(new int[][] {{}, {}, {}}));
+
+  //test cases for swapRC
+  System.out.println("Expected: {{1,4},{2,5},{3,6}} output: " + arrToString(swapRC(new int[][] {{1,2,3},{4,5,6}})));
+  System.out.println("Expected: {{0,1,2,3},{0,4,5,6},{0,5,1,2232},{0,0,2,1}} output: " + arrToString(swapRC(new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}})));
 }
 
 }
