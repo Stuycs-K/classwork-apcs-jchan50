@@ -1,6 +1,6 @@
 // Names: Jessie Chan (jessiec39@nycstudents.net) and Christine Chen (christinec109@nycstudents.net)
 public class ArrayMethods{
-  public static String arrayToString(int[] nums){
+  public static String arrToString(int[] nums){
   String s = "";
   for (int i = 0; i < nums.length; i++) {
     s = s + nums[i];
@@ -22,7 +22,11 @@ public class ArrayMethods{
   */
 public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
-  return "";
+  String s = "[";
+  for (int i = 0; i < ary.length; i++) {
+    s += arrToString(ary[i]);
+  }
+  return s + "]";
 }
 
 /*Return the sum of all of the values in the 2D array */
