@@ -1,3 +1,5 @@
+import javax.print.event.PrintJobListener;
+
 // Names: Jessie Chan (jessiec39@nycstudents.net) and Christine Chen (christinec109@nycstudents.net)
 public class ArrayMethods{
   public static String arrToString(int[] nums){
@@ -62,7 +64,20 @@ public static int[][] swapRC(int[][]nums){
 //-When the row number is the same as the column number replace
 //that negative with the value 1
 //-All other negatives replace with 0
-public static void replaceNegative(int[][] vals){ }
+public static void replaceNegative(int[][] vals){ 
+  for (int i = 0; i < vals.length; i++) {
+    for (int j = 0; j < vals[i].length; j++) {
+      if (vals[i][j] < 0) {
+        if (i == j) {
+          vals[i][j] = 1;
+        }
+        else {
+          vals[i][j] = 0;
+        }
+      }
+    }
+  }
+}
 
 //4. Make a copy of the given 2d array.
 //When testing : make sure that changing the original does NOT change the copy.
@@ -88,6 +103,16 @@ public static void main(String[] args) {
   //test cases for swapRC
   System.out.println("Expected: {{1,4},{2,5},{3,6}} output: " + arrToString(swapRC(new int[][] {{1,2,3},{4,5,6}})));
   System.out.println("Expected: {{0,1,2,3},{0,4,5,6},{0,5,1,2232},{0,0,2,1}} output: " + arrToString(swapRC(new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}})));
+
+  //test cases for replaceNegative
+  int[][] a = {{3,-3,5},{-3,4,2,-9},{0,2,-62342,2}};
+  System.out.println("Original:" + arrToString(a));
+  replaceNegative(a);
+  System.out.println("Edited: " + arrToString(a));
+  int[][] b = {{3,-3,5},{0,-4,2,-9},{0,2,-62342,2}, {}, {0,0,0,0,0}};
+  System.out.println("Original:" + arrToString(b));
+  replaceNegative(b);
+  System.out.println("Edited: " + arrToString(b));
 }
 
 
