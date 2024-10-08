@@ -67,8 +67,12 @@ public class ArrayDemo{
     a = new int[][] {{}};
     System.out.println("Original:" + arrToString(a));
     System.out.println("Copy: " + arrToString(copy(a)));
-    System.out.println("are their addresses the same? " + (a == copy(a)));
-
+    System.out.println("are their addresses the same? " + (a == copy(a)) + "\n");
+    
+    //test cases for countZeros2D
+    System.out.println("Expected : 5. Output: " + countZeros2D(new int[][] {{34, 2, 5}, {}, {0,2,0,4,0,3}, {000}, {}, {30, 0}}));
+    System.out.println("Expected : 1. Output: " + countZeros2D(new int[][] {{34, 2, 5}, {3,2,03423432432}, {2,2,3,4,3}, {1000}, {3}, {30, 0}}));
+    System.out.println("Expected : 3. Output: " + countZeros2D(new int[][] {{0}, {0}, {2}, {0}}));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -101,7 +105,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+     for (int i = 0; i < nums.length; i++) {
+       for (int j = 0; j < nums[i].length; j++) {
+         if (nums[i][j] == 0) {
+           count++;
+         }
+       }
+     }
+     return count;
   }
 
   //2. Calculate the sum of a 2d array
