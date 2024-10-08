@@ -5,71 +5,69 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-    public static void main(String[] args) {
-      //test cases for arrToSTring
-      System.out.println("Expected: " + Arrays.toString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}) + "+ arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
-      System.out.println("Expected: " + Arrays.toString(new int[][] {{}, {5, 6}, {2, 4, 9}}) + arrToString(new int[][] {{}, {5, 6}, {2, 4, 9}}));
-      System.out.println("Expected: " Arrays.toString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}) + "+ arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
-      System.out.println("");
+    //test cases for arrToSTring
+    System.out.println("Expected: " + Arrays.deepToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}) +  " output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
+    System.out.println("Expected: " + Arrays.deepToString(new int[][] {{}, {5, 6}, {2, 4, 9}}) + " output: " + arrToString(new int[][] {{}, {5, 6}, {2, 4, 9}}));
+    System.out.println("Expected: " + Arrays.deepToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}) + " output: " + arrToString(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
+    System.out.println("");
 
-      //test cases for arr2DSum
-      System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
-      System.out.println("Expected: 26 output: " + arr2DSum(new int[][] {{}, {5, 6}, {2, 4, 9}}));
-      System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
-      System.out.println("Expected: 0 output: " + arr2DSum(new int[][] {{}, {}, {}}));
-      System.out.println("");
+    //test cases for arr2DSum
+    System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}}));
+    System.out.println("Expected: 26 output: " + arr2DSum(new int[][] {{}, {5, 6}, {2, 4, 9}}));
+    System.out.println("Expected: 42 output: " + arr2DSum(new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}}));
+    System.out.println("Expected: 0 output: " + arr2DSum(new int[][] {{}, {}, {}}));
+    System.out.println("");
 
-      //test cases for swapRC
-      System.out.println("Expected: {{1,4},{2,5},{3,6}} output: " + arrToString(swapRC(new int[][] {{1,2,3},{4,5,6}})));
-      System.out.println("Expected: {{0,1,2,3},{0,4,5,6},{0,5,1,2232},{0,0,2,1}} output: " + arrToString(swapRC(new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}})));
-      System.out.println("");
+    //test cases for swapRC
+    System.out.println("Expected: {{1,4},{2,5},{3,6}} output: " + arrToString(swapRC(new int[][] {{1,2,3},{4,5,6}})));
+    System.out.println("Expected: {{0,1,2,3},{0,4,5,6},{0,5,1,2232},{0,0,2,1}} output: " + arrToString(swapRC(new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}})));
+    System.out.println("");
 
-      //test cases for replaceNegative
-      int[][] a = {{3,-3,5},{-3,4,2,-9},{0,2,-62342,2}};
-      System.out.println("Original:" + arrToString(a));
-      replaceNegative(a);
-      System.out.println("Edited: " + arrToString(a));
-      int[][] b = {{3,-3,5},{0,-4,2,-9},{0,2,-62342,2}, {}, {0,0,0,0,0}};
-      System.out.println("Original:" + arrToString(b));
-      replaceNegative(b);
-      System.out.println("Edited: " + arrToString(b));
-      b = new int[][] {};
-      System.out.println("Original:" + arrToString(b));
-      replaceNegative(b);
-      System.out.println("Edited: " + arrToString(b));
-      b = new int[][] {{}};
-      System.out.println("Original:" + arrToString(b));
-      replaceNegative(b);
-      System.out.println("Edited: " + arrToString(b));
-      System.out.println("");
+    //test cases for replaceNegative
+    int[][] a = {{3,-3,5},{-3,4,2,-9},{0,2,-62342,2}};
+    System.out.println("Original:" + arrToString(a));
+    replaceNegative(a);
+    System.out.println("Edited: " + arrToString(a));
+    int[][] b = {{3,-3,5},{0,-4,2,-9},{0,2,-62342,2}, {}, {0,0,0,0,0}};
+    System.out.println("Original:" + arrToString(b));
+    replaceNegative(b);
+    System.out.println("Edited: " + arrToString(b));
+    b = new int[][] {};
+    System.out.println("Original:" + arrToString(b));
+    replaceNegative(b);
+    System.out.println("Edited: " + arrToString(b));
+    b = new int[][] {{}};
+    System.out.println("Original:" + arrToString(b));
+    replaceNegative(b);
+    System.out.println("Edited: " + arrToString(b));
+    System.out.println("");
 
 
-      //test cases for copy
-      a = new int[][] {{3,-3,5},{-3,4,2,-9},{0,2,-62342,2}};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-      a = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-      a = new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-      a = new int[][] {{}, {5, 6}, {2, 4, 9}};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-      a = new int[][] {};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-      a = new int[][] {{}};
-      System.out.println("Original:" + arrToString(a));
-      System.out.println("Copy: " + arrToString(copy(a)));
-      System.out.println("are their addresses the same? " + (a == copy(a)));
-    }
+    //test cases for copy
+    a = new int[][] {{3,-3,5},{-3,4,2,-9},{0,2,-62342,2}};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
+    a = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}, {0, 0, 0}};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
+    a = new int[][] {{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
+    a = new int[][] {{}, {5, 6}, {2, 4, 9}};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
+    a = new int[][] {};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
+    a = new int[][] {{}};
+    System.out.println("Original:" + arrToString(a));
+    System.out.println("Copy: " + arrToString(copy(a)));
+    System.out.println("are their addresses the same? " + (a == copy(a)));
 
   }
 
