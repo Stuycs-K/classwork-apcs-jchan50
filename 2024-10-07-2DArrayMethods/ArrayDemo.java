@@ -195,6 +195,9 @@ public class ArrayDemo{
   public static String htmlTable(int[][]nums){
     String s = "<table>";
     for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        s = s + "<td>" + arrToString(nums[i][j]) + "</td>";
+      }
       s = s + "<tr>" + arrToString(nums[i]) + "</tr>";
     }
     return s + "</table>";
