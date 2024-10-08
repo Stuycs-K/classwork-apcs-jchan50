@@ -73,6 +73,9 @@ public class ArrayDemo{
     System.out.println("Expected : 5. Output: " + countZeros2D(new int[][] {{34, 2, 5}, {}, {0,2,0,4,0,3}, {000}, {}, {30, 0}}));
     System.out.println("Expected : 1. Output: " + countZeros2D(new int[][] {{34, 2, 5}, {3,2,03423432432}, {2,2,3,4,3}, {1000}, {3}, {30, 0}}));
     System.out.println("Expected : 3. Output: " + countZeros2D(new int[][] {{0}, {0}, {2}, {0}}));
+
+    //test cases for htmlTable
+    System.out.println(htmlTable(new int[][]{{1,2},{3}}));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -190,7 +193,11 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String s = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      s = s + "<tr>" + arrToString(nums[i]) + "</tr>";
+    }
+    return s + "</table>";
   }
 
 
