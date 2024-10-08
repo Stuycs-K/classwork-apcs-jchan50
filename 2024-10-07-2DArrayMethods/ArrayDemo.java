@@ -76,6 +76,10 @@ public class ArrayDemo{
 
     //test cases for htmlTable
     System.out.println(htmlTable(new int[][]{{1,2},{3}}));
+    System.out.println(htmlTable(new int[][]{{},{}, {34,2,1,4}}));
+    System.out.println(htmlTable(new int[][]{{},{}, {}}));
+    System.out.println(htmlTable(new int[][]{{}}));
+    System.out.println(htmlTable(new int[][]{{0,0,0,0}, {1,4,5,0},{2,5,1,2},{3,6,2232,1}}));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -192,15 +196,20 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
-  public static String htmlTable(int[][]nums){
-    String s = "<table>";
-    for (int i = 0; i < nums.length; i++) {
-      for (int j = 0; j < nums[i].length; j++) {
-        s = s + "<td>" + arrToString(nums[i][j]) + "</td>";
-      }
-      s = s + "<tr>" + arrToString(nums[i]) + "</tr>";
+
+  public static String htmlValues(int[] nums){
+    String s = "";
+    for (int j = 0; j < nums.length; j++) {
+      s = s + "<td>" + (nums[j]) + "</td>";
     }
-    return s + "</table>";
+    return s;
+  }
+  public static String htmlTable(int[][]nums){
+    String s = "";
+    for (int i = 0; i < nums.length; i++) {
+      s = s + "<tr>" + htmlValues(nums[i]) + "</tr>";
+    }
+    return "<table>" + s + "</table>";
   }
 
 
