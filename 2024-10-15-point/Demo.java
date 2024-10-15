@@ -17,6 +17,8 @@ public class Demo{
     Point p4 = new Point(p3);
     System.out.println("this is point 3: " +  p3);
     System.out.println("this is point 4: " + p4);
+
+    System.out.println("\ntest cases for distance things");
     Point triangle1 = new Point(0,0);
     Point triangle2 = new Point(1,0);
     Point triangle3 = new Point(0.5, (Math.sqrt(3) / 2));
