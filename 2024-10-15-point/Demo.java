@@ -19,7 +19,7 @@ public class Demo{
     System.out.println("this is point 4: " + p4);
     Point triangle1 = new Point(0,0);
     Point triangle2 = new Point(1,0);
-    Point triangle3 = new Point(1/2,Math.sqrt(3) / 2);
+    Point triangle3 = new Point(0.5, (Math.sqrt(3) / 2));
 
     System.out.println( distance(p1,p2));
     System.out.println( distance(p1,p3));
@@ -29,5 +29,9 @@ public class Demo{
     System.out.println( p1.distanceTo(p3));
 
     System.out.println("");
+    System.out.println("Triangle side lengths");
+    System.out.println("Distance between corner1 and corner2: " + distance(triangle1,triangle2));
+    System.out.println("Distance between corner2 and corner3: " + distance(triangle2,triangle3));
+    System.out.println("Distance between corner3 and corner1: " + distance(triangle3,triangle1));
   }
 }
