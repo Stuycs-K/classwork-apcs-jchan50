@@ -9,13 +9,13 @@ public class TriangleTester{
    
     public static int countTrianglesA(String filename){
 
-        Scanner input = new Scanner(filename);
+        
 
         int count = 0;
         int a = 0;
         int b = 0;
         int c = 0;
-        while(input.hasNextInt){
+        while(filename.hasNextInt){
             a = nextInt();
             b = nextInt();
             c = nextInt();
@@ -42,10 +42,11 @@ public class TriangleTester{
     public static void main(String[] args){
 
         File file = new File("inputTri.txt");//1
+        Scanner input = new Scanner(file);
         
 
         System.out.println(isTriangle(5, 100, 23));
         System.out.println(isTriangle(4, 5, 6));
-        System.out.println(countTrianglesA(Files.readString(file)));
+        System.out.println(countTrianglesA(input));
     }
 }
