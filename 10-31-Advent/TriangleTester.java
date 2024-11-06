@@ -36,25 +36,19 @@ public class TriangleTester{
     }
 
     public static boolean isTriangle(int a, int b, int c){
-        if (c > a + b){
-            return false;
-        }
-        if (b > a + c){
-            return false;
-        }
-        if (a > c + b){
-            return false;
-        }
-        return true;
+        // if ((c > a + b) || (b > a + c) ||  (a > c + b)){
+        //     return false;
+        // }
+        // return true;
+        return (c < a + b) && (b < a + c) &&  (a < c + b);
     }
 
     public static void main(String[] args){
 
-
-
-
         System.out.println(isTriangle(5, 100, 23));
         System.out.println(isTriangle(4, 5, 6));
+        System.out.println(isTriangle(1, 2, 3));
+        System.out.println(isTriangle(3, 2, 3));
         System.out.println(countTrianglesA("inputTri.txt"));
     }
 }
