@@ -42,9 +42,10 @@ public class TriangleTester{
     public static void main(String[] args){
 
         File file = new File("inputTri.txt");//1
+        
 
         System.out.println(isTriangle(5, 100, 23));
         System.out.println(isTriangle(4, 5, 6));
-        System.out.println(countTrianglesA(file));
+        System.out.println(countTrianglesA(Files.readString(file)));
     }
 }
