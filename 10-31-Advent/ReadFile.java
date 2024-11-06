@@ -28,6 +28,10 @@ public class ReadFile {
           System.out.println(input.nextLine());
           //do something with the next line of the file
         }
+        if ((index % 2) == 1){
+          String doesntmatter = input.nextLine();
+          //do something with the next line of the file
+        }
         index++;
       }
       input.close();//releases the file from your program
