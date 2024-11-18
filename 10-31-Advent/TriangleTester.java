@@ -78,7 +78,7 @@ public class TriangleTester{
         System.out.println(isTriangle(4, 5, 6));
         System.out.println(isTriangle(1, 2, 3));
         System.out.println(isTriangle(3, 2, 3));
-        System.out.println(countTrianglesA("inputTri.txt"));
-        System.out.println(countTrianglesB("inputTri.txt"));
+        System.out.println(countTrianglesA("advent3puzzleinput.txt"));
+        System.out.println(countTrianglesB("advent3puzzleinput.txt"));
     }
 }
