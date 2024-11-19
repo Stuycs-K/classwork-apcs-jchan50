@@ -20,8 +20,13 @@ public class day1{
 
   public static int solve(String[] data){
     int x = 0, y = 0, facing = 0;
-    int[][]compass = {{0,1}, {1,0}, {0,-1}, {-1,0}}
-    
+    int[][]compass = {{0,1}, {1,0}, {0,-1}, {-1,0}};
+    for (int i = 0; i < data.length; i++){
+      String direction = data[i].substring(0,1);
+      int distance = data[i].substring(1);
+      System.out.print(distance + distance);
+    }
+    return 0;
     //(facing + length) % length
   }
 
@@ -45,6 +50,7 @@ public class day1{
     //String[] data = prase("input.txt"):
     //System.out.println(data.arrayToString);
     System.out.println(Arrays.toString(parse("advent3puzzleinput.txt")));
+    System.out.println(solve(parse("advent3puzzleinput.txt")));
   }
 
 }
