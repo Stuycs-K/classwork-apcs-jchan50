@@ -4,24 +4,48 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class day1{
-  privite int x;
-  privite int y;
+  private int x;
+  private int y;
 
-  public static boolean Right?(String filename){
+  // public String[] parse(String filename){
+  //   try{
+  //     Scanner input = new Scanner(new File(filename)):
+  //     String line = inf.nextLine();
+  //     return line.split(", ");
+  //   }catch(Exception e){
+  //     System.exit(1);
+  //   }
+  // }
+  // Integer.parseInt
+  //
+  // public static int solve(String[] data){
+  //   int x = 0, y = 0, facing = 0;
+  //   int[][]offset = {
+  //     {0,1}, {1,0}, {0,-1}, {-1,0}
+  //   }
+  //   (facing + length) % length
+  // }
+
+  public static boolean Right(String filename){
     try {
-    File file = new File(filename);//1
-    Scanner s = new Scanner(file);
-    while(s.hasNext()){
-        String step = next();
+    Scanner input = new Scanner(new File(filename));
+    while(input.hasNext()){
+        String step = input.next();
         System.out.println(step);
     }
     return true;
     }
     catch (FileNotFoundException ex) {
       //File not found what should you do?
-      System.out.println("File not found");
-      return -1; //you can return from a void function just don't put a value.
+      System.exit(1);
+      return false; //you can return from a void function just don't put a value.
     }
+  }
 
-  System.out.println(Right?("advent3puzzleinput.txt"));
+  public static void main(String[] args){
+    //String[] data = prase("input.txt"):
+    //System.out.println(data.arrayToString);
+    System.out.println(Right("advent3puzzleinput.txt"));
+  }
+
 }
