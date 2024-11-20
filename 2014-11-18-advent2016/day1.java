@@ -62,8 +62,8 @@ public class day1{
   public static void main(String[] args){
     //String[] data = prase("input.txt"):
     //System.out.println(data.arrayToString);
-    System.out.println(Arrays.toString(parse("advent3puzzleinput.txt")));
-    System.out.println(solve(parse("advent3puzzleinput.txt")));
+    System.out.println(Arrays.toString(parse("day1input.txt")));
+    System.out.println(solve(parse("day1input.txt")));
   }
 
 }

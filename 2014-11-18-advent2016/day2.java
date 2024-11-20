@@ -9,7 +9,7 @@ public class day2{
     public static String solve(String filename){
         String[][] keypad = {{"1","2", "3"}, {"4","5", "6"}, {"7","8", "9"}};
         String code = "";
-        int a = 1, b = 1;
+        int a = 1, b = 1; //row and column index starting at value "5"
         try{
           Scanner input = new Scanner(new File(filename));
           while (input.hasNextLine()){
@@ -17,7 +17,7 @@ public class day2{
             String[] data = line.split("");
             for (int i = 0; i < data.length; i++){
                 //System.out.println(data[i]);
-                if (a > 0 && data[i].equals("U")){
+                if (a > 0 && data[i].equals("U")){ //checking that it doesnt leave bounds
                     a--;
                     // System.out.println("hi");
                     // System.out.println(a);
