@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class day2{
 
-    public static String[] parse(String filename){
+    public static String solve(String filename){
         String[][] keypad = {{"1","2", "3"}, {"4","5", "6"}, {"7","8", "9"}};
         String code = "";
         int a = 1, b = 1;
@@ -14,17 +14,42 @@ public class day2{
           Scanner input = new Scanner(new File(filename));
           while (input.hasNextLine()){
             String line = input.nextLine();
-            String[] data (line.split("")));
-            for (int i = 0;)
+            String[] data = line.split("");
+            for (int i = 0; i < data.length; i++){
+                //System.out.println(data[i]);
+                if (a > 0 && data[i].equals("U")){
+                    a--;
+                    // System.out.println("hi");
+                    // System.out.println(a);
+                }
+                if (a < 2 && data[i].equals("D")) {
+                    a++;
+                    // System.out.println(a);
+                    // System.out.println("hi");
+                }
+                if (b < 2 && data[i].equals("R")){
+                    b++;
+                    // System.out.println(b);
+                    // System.out.println("hi");
+                }
+                if ( b > 0 && data[i].equals("L")) {
+                    b--;
+                    // System.out.println(b);
+                    // System.out.println("hi");
+                }
+            }
+            
+            code += keypad[a][b];
+            //System.out.println(code);
           }
-          return null;
+          return code;
         }catch(Exception e){
-          System.exit(1);
+        e.printStackTrace();
           return null;
         }
     }
 
     public static void main(String[] args){
-        parse("day2input.txt");
+        System.out.println(solve("day2input.txt"));
     }
 }
