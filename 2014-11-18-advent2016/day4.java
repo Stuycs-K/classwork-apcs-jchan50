@@ -19,9 +19,9 @@ public class day4{
             //System.out.println(Arrays.toString(data));
             String encr = "";
             for (int i = 0; i < data.length -1; i++){
-              encr += data[i]; 
+              encr += data[i];
             }
-            String[] enc = encr.split(""); 
+            String[] enc = encr.split("");
             //ArrayList<String> en = new ArrayList<>(Arrays.asList(enc));
             //System.out.println(Arrays.toString(enc));
             for (int i = 0; i < enc.length; i++){
@@ -35,12 +35,25 @@ public class day4{
             }
             System.out.println(letters);
             System.out.println(tally);
+            System.out.println(indexOfMax(tally));
           }
           return null;
         }catch(Exception e){
         e.printStackTrace();
           return null;
         }
+    }
+
+    public static int indexOfMax(ArrayList<Integer> nums){
+      int index = 0;
+      int temp = -1;
+      for (int i = 0; i < nums.size(); i++){
+        if (nums.get(i) > temp){
+          temp = nums.get(i);
+          index = i;
+        }
+      }
+      return index;
     }
 
     public static void main(String[] args){
