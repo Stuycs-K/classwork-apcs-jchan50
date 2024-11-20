@@ -17,6 +17,8 @@ public class day4{
             String line = input.nextLine();
             String[] data = line.split("-");
             //System.out.println(Arrays.toString(data));
+            String checksum = data[data.length -1].substring(4,9);
+            System.out.println(checksum);
             String encr = "";
             for (int i = 0; i < data.length -1; i++){
               encr += data[i];
@@ -36,6 +38,8 @@ public class day4{
             System.out.println(letters);
             System.out.println(tally);
             System.out.println(indexOfMax(tally));
+            String common5 = "";
+            
           }
           return null;
         }catch(Exception e){
