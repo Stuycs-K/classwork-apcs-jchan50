@@ -48,7 +48,7 @@ public class day6{
             // System.out.println(col7);
             // System.out.println(col8);
 
-            mostCommonLetter(col1);
+            System.out.println(mostCommonLetter(col1));
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("bad");
@@ -70,10 +70,32 @@ public class day6{
               tally.add(1);
             }
           }
-          System.out.println( letters);
-            System.out.println(tally);
-        return null;
+        //   System.out.println( letters);
+        //     System.out.println(tally);
+            int m = indexOfMax(tally, letters);
+            //System.out.println(letters.get(m));
+
+        return letters.get(m);
     }
+
+    public static int indexOfMax(ArrayList<Integer> nums, ArrayList<String> letters){
+        int index = 0;
+        int temp = -1;
+        for (int i = 0; i < nums.size(); i++){
+          if (nums.get(i) > temp){
+            temp = nums.get(i);
+            index = i;
+          }
+          if (nums.get(i) == temp){//if tally is the same
+            if (letters.get(i).compareTo(letters.get(index)) < 0){ //if the letter corresponding to i is before the letter corresponding to INDEX in the alphabet
+              index = i;
+  
+            }
+          }
+        }
+        return index;
+      }
+
     public static void main(String[] args){
         solve("day6input.txt");
     }
