@@ -68,11 +68,13 @@ public class day4{
           index = i;
         }
         if (nums.get(i) == temp){//if tally is the same
-          if (letters.get(i).compareTo(letters.get(temp)) < 0){ //if the letter corresponding to i is before the letter corresponding to temp in the alphabet
-            System.out.println(letters.get(i));
-            System.out.println(letters.get(temp));
-            temp = nums.get(i);
+          if (letters.get(i).compareTo(letters.get(index)) < 0){ //if the letter corresponding to i is before the letter corresponding to INDEX in the alphabet
             index = i;
+             
+
+            System.out.println("index is " + index);
+            System.out.println("letter at index is " + letters.get(index));
+            System.out.println("letter at temp is " + letters.get(temp));
 
           }
         }
