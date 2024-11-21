@@ -15,7 +15,7 @@ public class day6{
     // private ArrayList<String> col7 = new ArrayList<>();
     // private ArrayList<String> col8 = new ArrayList<>();
 
-    public static void parse(String filename){
+    public static void solve(String filename){
          ArrayList<String> col1 = new ArrayList<>();
          ArrayList<String> col2 = new ArrayList<>();
          ArrayList<String> col3 = new ArrayList<>();
@@ -39,25 +39,42 @@ public class day6{
                 col7.add(data[6]);
                 col8.add(data[7]);
             }
-            System.out.println(col1);
-            System.out.println(col2);
-            System.out.println(col3);
-            System.out.println(col4);
-            System.out.println(col5);
-            System.out.println(col6);
-            System.out.println(col7);
-            System.out.println(col8);
+            // System.out.println(col1);
+            // System.out.println(col2);
+            // System.out.println(col3);
+            // System.out.println(col4);
+            // System.out.println(col5);
+            // System.out.println(col6);
+            // System.out.println(col7);
+            // System.out.println(col8);
+
+            mostCommonLetter(col1);
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("bad");
             
           }
 
-
+          
     }
 
-
+    public static String mostCommonLetter(ArrayList<String> column){
+        ArrayList<String> letters = new ArrayList<String>();
+        ArrayList<Integer> tally = new ArrayList<Integer>();
+        for (int i = 0; i < column.size(); i++){
+            if (letters.indexOf(column.get(i)) != -1){
+              tally.set(letters.indexOf(column.get(i)), tally.get(letters.indexOf(column.get(i))) + 1); //increases that letter's  tally by one;
+            }
+            else{ //else add new letter to letters and new slot to tally
+              letters.add(column.get(i)); 
+              tally.add(1);
+            }
+          }
+          System.out.println( letters);
+            System.out.println(tally);
+        return null;
+    }
     public static void main(String[] args){
-        parse("day6input.txt");
+        solve("day6input.txt");
     }
 }
