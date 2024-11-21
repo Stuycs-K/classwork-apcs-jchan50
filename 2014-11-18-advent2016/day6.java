@@ -48,7 +48,17 @@ public class day6{
             // System.out.println(col7);
             // System.out.println(col8);
 
-            System.out.println(mostCommonLetter(col1));
+            String message = "";
+            message = mostCommonLetter(col1) 
+                        + mostCommonLetter(col2) 
+                        + mostCommonLetter(col3) 
+                        + mostCommonLetter(col4)
+                        + mostCommonLetter(col5) 
+                        + mostCommonLetter(col6) 
+                        + mostCommonLetter(col7)
+                        + mostCommonLetter(col8);
+            System.out.println(message);
+            
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("bad");
