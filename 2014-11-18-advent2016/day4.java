@@ -18,7 +18,7 @@ public class day4{
             String[] data = line.split("-");
             //System.out.println(Arrays.toString(data));
             String checksum = data[data.length -1].substring(4,9);
-            System.out.println(checksum);
+            System.out.println("1" + checksum);
             String encr = "";
             for (int i = 0; i < data.length -1; i++){
               encr += data[i];
@@ -35,10 +35,21 @@ public class day4{
                 tally.add(1);
               }
             }
-            System.out.println(letters);
-            System.out.println(tally);
-            System.out.println(indexOfMax(tally));
+            System.out.println("2" + letters);
+            System.out.println("3" +tally);
             String common5 = "";
+            for (int i = 0; i < 5; i++){
+              int m = indexOfMax(tally, letters);
+              System.out.println(m);
+              // if (tally.get(m).equals(1)){
+              //   letters.sort(null);
+              // }
+              System.out.println(letters.get(m));
+              common5 += letters.get(m);
+              tally.remove(m);
+              letters.remove(m);
+            }
+            System.out.println("4" + common5);
             
           }
           return null;
@@ -48,13 +59,22 @@ public class day4{
         }
     }
 
-    public static int indexOfMax(ArrayList<Integer> nums){
+    public static int indexOfMax(ArrayList<Integer> nums, ArrayList<String> letters){
       int index = 0;
       int temp = -1;
       for (int i = 0; i < nums.size(); i++){
         if (nums.get(i) > temp){
           temp = nums.get(i);
           index = i;
+        }
+        if (nums.get(i) == temp){//if tally is the same
+          if (letters.get(i).compareTo(letters.get(temp)) < 0){ //if the letter corresponding to i is before the letter corresponding to temp in the alphabet
+            System.out.println(letters.get(i));
+            System.out.println(letters.get(temp));
+            temp = nums.get(i);
+            index = i;
+
+          }
         }
       }
       return index;
