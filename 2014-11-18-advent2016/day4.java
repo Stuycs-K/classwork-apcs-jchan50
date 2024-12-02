@@ -8,17 +8,25 @@ import java.util.Arrays;
 public class day4{
 
 
-    public static String solve(String filename){
+    public static int solve(String filename){
+      int sum = 0;
         try{
           Scanner input = new Scanner(new File(filename));
           while (input.hasNextLine()){
-            ArrayList<String> letters = new ArrayList<String>();
-            ArrayList<Integer> tally = new ArrayList<Integer>();
+            
+
             String line = input.nextLine();
             String[] data = line.split("-");
+
             //System.out.println(Arrays.toString(data));
+            // variables
+            ArrayList<String> letters = new ArrayList<String>();
+            ArrayList<Integer> tally = new ArrayList<Integer>();
             String checksum = data[data.length -1].substring(4,9);
             System.out.println(checksum);
+            String id = data[data.length -1].substring(0,3);
+            System.out.println(id);
+
             String encr = "";
             for (int i = 0; i < data.length -1; i++){
               encr += data[i];
@@ -35,20 +43,37 @@ public class day4{
                 tally.add(1);
               }
             }
-            System.out.println(letters);
+            System.out.println( letters);
             System.out.println(tally);
-            System.out.println(indexOfMax(tally));
+
             String common5 = "";
+            for (int i = 0; i < 5; i++){
+              int m = indexOfMax(tally, letters);
+              //System.out.println(m);
+              // if (tally.get(m).equals(1)){
+              //   letters.sort(null);
+              // }
+              //System.out.println(letters.get(m));
+              common5 += letters.get(m);
+              tally.remove(m);
+              letters.remove(m);
+            }
+            System.out.println(common5);
             
+            if(checksum.equals(common5)){
+              sum += Integer.parseInt(id);
+              System.out.println(sum);
+            }
           }
-          return null;
+          return sum;
         }catch(Exception e){
-        e.printStackTrace();
-          return null;
+          e.printStackTrace();
+          System.out.println("bad");
+          return 0;
         }
     }
 
-    public static int indexOfMax(ArrayList<Integer> nums){
+    public static int indexOfMax(ArrayList<Integer> nums, ArrayList<String> letters){
       int index = 0;
       int temp = -1;
       for (int i = 0; i < nums.size(); i++){
@@ -56,11 +81,17 @@ public class day4{
           temp = nums.get(i);
           index = i;
         }
+        if (nums.get(i) == temp){//if tally is the same
+          if (letters.get(i).compareTo(letters.get(index)) < 0){ //if the letter corresponding to i is before the letter corresponding to INDEX in the alphabet
+            index = i;
+
+          }
+        }
       }
       return index;
     }
 
     public static void main(String[] args){
-        System.out.println(solve("day4input.txt"));
+        System.out.println("sum is " + solve("day4input.txt"));
     }
 }
