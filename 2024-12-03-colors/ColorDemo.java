@@ -2,6 +2,7 @@ public class ColorDemo{
     public static final String CLEAR_SCREEN =  "\u001b[2J";
     public static final String HIDE_CURSOR =  "\u001b[?25l";
     public static final String SHOW_CURSOR =  "\u001b[?25h";
+    public static final String TOPLEFT_CURSOR =  "\u001b[H";
 
     public static int BLACK = 30;
     public static int RED = 31;
@@ -18,6 +19,13 @@ public class ColorDemo{
         System.out.print("\u001b[" + r + ";" + c + "f");
       }
 
+    public static void sleep(int milli){
+        try{
+                Thread.sleep(milli);
+        }catch(Exception e){
+        }
+  }
+
     public static void main(String[] args){
         // for(int r = 0; r < 256; r+=32){
         //     for(int g = 0; g <= 256; g+=32){
@@ -27,15 +35,22 @@ public class ColorDemo{
         //     }
         //       System.out.print();
         //   }
-        for (int j = 0; j < 20; j++){
-            for (int i = 0; i < 20; i++){
-                int randomR = (int)(Math.random() * 256);
-                int randomG = (int)(Math.random() * 256);
-                int randomB = (int)(Math.random() * 256);
-                System.out.print("\u001b[38;2;"+randomR+";"+randomG+";"+randomB+";7m brat ");
+        for (int k = 0; k < 20; k++){  
+            sleep(100);
+            System.out.println(CLEAR_SCREEN);
+            for (int j = 0; j < 20; j++){
+                for (int i = 0; i < 20; i++){
+                    int randomR = (int)(Math.random() * 256);
+                    int randomG = (int)(Math.random() * 256);
+                    int randomB = (int)(Math.random() * 256);
+                    System.out.print("\u001b[38;2;"+randomR+";"+randomG+";"+randomB+";7m brat ");
+                }
+                
+                System.out.println();
+
             }
-            System.out.println();
+            System.out.println(TOPLEFT_CURSOR);
         }
-        
+        System.out.println("\u001b[0m");
     }
 }
