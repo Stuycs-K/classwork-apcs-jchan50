@@ -19,13 +19,23 @@ public class ColorDemo{
       }
 
     public static void main(String[] args){
-        for(int r = 0; r < 256; r+=32){
-            for(int g = 0; g <= 256; g+=32){
-              for(int b = 0; b <= 256; b+=32){
-                System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
-              }
+        // for(int r = 0; r < 256; r+=32){
+        //     for(int g = 0; g <= 256; g+=32){
+        //       for(int b = 0; b <= 256; b+=32){
+        //         System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+        //       }
+        //     }
+        //       System.out.print();
+        //   }
+        for (int j = 0; j < 20; j++){
+            for (int i = 0; i < 20; i++){
+                int randomR = (int)(Math.random() * 256);
+                int randomG = (int)(Math.random() * 256);
+                int randomB = (int)(Math.random() * 256);
+                System.out.print("\u001b[38;2;"+randomR+";"+randomG+";"+randomB+";7m brat ");
             }
-              System.out.print();
-          }
+            System.out.println();
+        }
+        
     }
 }
