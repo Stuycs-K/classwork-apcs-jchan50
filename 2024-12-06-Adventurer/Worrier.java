@@ -1,6 +1,6 @@
 public class Worrier extends Adventurer{
   private String specialName = "Anxiety";
-  private int special, specialMax;
+  private int special, specialMax = 50;
 
   //Abstract methods are meant to be implemented in child classes.
 
@@ -29,16 +29,25 @@ public class Worrier extends Adventurer{
     support their allys
   */
   //hurt or hinder the target adventurer
-  public  String attack(Adventurer other);
+  public  String attack(Adventurer other){
+    other.applyDamage(5);
+  }
 
   //heall or buff the target adventurer
-  public  String support(Adventurer other);
+  public  String support(Adventurer other){
+    other.setHP(other.getHP + 1);
+  }
 
   //heall or buff self
-  public  String support();
+  public  String support(){
+    HP++;
+  }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public  String specialAttack(Adventurer other);
+  public  String specialAttack(Adventurer other){
+    attack(other);
+    special -= 10;
+  }
 
 
 
