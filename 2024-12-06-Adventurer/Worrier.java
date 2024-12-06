@@ -2,6 +2,14 @@ public class Worrier extends Adventurer{
   private String specialName = "Anxiety";
   private int special, specialMax = 50;
 
+  public Worrier(String name){
+      super(name);
+  }
+
+  public Worrier(String name, int hp){
+      super(name, hp);
+  }
+
   //Abstract methods are meant to be implemented in child classes.
 
   /*
@@ -31,22 +39,26 @@ public class Worrier extends Adventurer{
   //hurt or hinder the target adventurer
   public  String attack(Adventurer other){
     other.applyDamage(5);
+    return this.getName() + " attacked " + other.getName();
   }
 
   //heall or buff the target adventurer
   public  String support(Adventurer other){
-    other.setHP(other.getHP + 1);
+    other.setHP(other.getHP() + 1);
+    return this.getName() + " supported " + other.getName();
   }
 
   //heall or buff self
   public  String support(){
-    HP++;
+    this.setHP(this.getHP() + 1);
+    return this.getName() + " supported itself";
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public  String specialAttack(Adventurer other){
     attack(other);
     special -= 10;
+    return this.getName() + "used" + this.getSpecialName() + " on " + other.getName();
   }
 
 
