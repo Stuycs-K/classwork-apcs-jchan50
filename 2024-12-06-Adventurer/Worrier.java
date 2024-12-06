@@ -1,6 +1,6 @@
 public class Worrier extends Adventurer{
   private String specialName = "Anxiety";
-  private int special, specialMax = 50;
+  private int special = 50, specialMax = 50;
 
   public Worrier(String name){
       super(name);
@@ -60,7 +60,6 @@ public class Worrier extends Adventurer{
     special -= 10;
     return this.getName() + "used" + this.getSpecialName() + " on " + other.getName();
   }
-
 
 
 }
