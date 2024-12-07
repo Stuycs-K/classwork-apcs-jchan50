@@ -39,26 +39,26 @@ public class Worrier extends Adventurer{
   //hurt or hinder the target adventurer
   public  String attack(Adventurer other){
     other.applyDamage(5);
-    return this.getName() + " attacked " + other.getName();
+    return this.getName() + " attacked " + other.getName() + ". " + other.getName() + "'s hp is now " + other.getHP();
   }
 
   //heall or buff the target adventurer
   public  String support(Adventurer other){
     other.setHP(other.getHP() + 1);
-    return this.getName() + " supported " + other.getName();
+    return this.getName() + " supported " + other.getName() + ". " + other.getName() + "'s hp is now " + other.getHP();
   }
 
   //heall or buff self
   public  String support(){
     this.setHP(this.getHP() + 1);
-    return this.getName() + " supported itself";
+    return this.getName() + " supported itself. " + this.getName() + "'s hp is now " + this.getHP();
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public  String specialAttack(Adventurer other){
-    attack(other);
+    other.applyDamage(10);
     special -= 10;
-    return this.getName() + "used" + this.getSpecialName() + " on " + other.getName();
+    return this.getName() + " used " + this.getSpecialName() + " on " + other.getName() + ". " + other.getName() + "'s hp is now " + other.getHP();
   }
 
 
