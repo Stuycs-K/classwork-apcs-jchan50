@@ -46,7 +46,7 @@ public class Game {
       if (response.equals("quit")){
         break;
       }
-
+System.out.println();
       if (enemy.getHP() > 0){
         int eresponse = (int) (Math.random() * 3 + 1);
         if (eresponse == 1){
@@ -60,7 +60,7 @@ public class Game {
         }
       }
 
-      System.out.println();
+
 
       if (enemy.getHP() <= 0){
         System.out.println(player.getName() + " won!");
