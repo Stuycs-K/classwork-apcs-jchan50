@@ -9,7 +9,7 @@ public class Worrier extends Adventurer{
   }
 
   public Worrier(String name, int hp){
-    this(name,hp,"c++");
+    this(name,hp, 50);
   }
 
   public Worrier(String name){
@@ -17,7 +17,7 @@ public class Worrier extends Adventurer{
   }
 
   public Worrier(){
-    this("Carmack");
+    this("Geogre");
   }
   //Abstract methods are meant to be implemented in child classes.
 
@@ -50,7 +50,7 @@ public class Worrier extends Adventurer{
     other.applyDamage(5);
     return this.getName() + " attacked " + other.getName() + ". " + other.getName() + "'s hp is now " + other.getHP();
   }
-//adding two randoms varies the distribution; ie two 6-sided die makes 7 more common
+
   //heall or buff the target adventurer
   public  String support(Adventurer other){
     other.setHP(other.getHP() + 1);
