@@ -15,6 +15,7 @@ public class Game {
     //Do something with the input
     System.out.println("Username is: " + userName);
 
+    System.out.println();
     Adventurer player = new Worrier(userName,20);
     Adventurer enemy = new Worrier("Cronwall",30);
 
@@ -24,7 +25,6 @@ public class Game {
 
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
       String response  = userInput.nextLine();
-      System.out.println(response);
 
       String[] v = {"a", "attack", "sp", "special", "su", "support", "quit"};
       List<String> l = Arrays.asList(v);
@@ -33,7 +33,6 @@ public class Game {
       while (l.indexOf(response) == -1){
         System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
         response  = userInput.nextLine();
-        System.out.println(response);
       }
       if (response.equals("a") || response.equals("attack")){
         System.out.println(player.attack(enemy));
@@ -47,11 +46,34 @@ public class Game {
       if (response.equals("quit")){
         break;
       }
-      else{
 
+      if (enemy.getHP() > 0){
+        int eresponse = (int) (Math.random() * 3 + 1);
+        if (eresponse == 1){
+          System.out.println(enemy.attack(player));
+        }
+        if (eresponse == 2){
+          System.out.println(enemy.specialAttack(player));
+        }
+        if (eresponse == 3){
+          System.out.println(enemy.support());
+        }
       }
 
-      break;
+      System.out.println();
+
+      if (enemy.getHP() <= 0){
+        System.out.println(player.getName() + " won!");
+        break;
+      }
+      if (player.getHP() <= 0){
+        System.out.println(enemy.getName() + " won!");
+        break;
+      }
+
+
+
+
     }
   }
 }
