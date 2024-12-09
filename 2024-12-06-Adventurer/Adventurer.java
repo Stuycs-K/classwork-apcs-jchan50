@@ -66,7 +66,7 @@ public abstract class Adventurer{
 
   //toString method
   public String toString(){
-    return this.getName();
+    return this.getName() + " has an hp of " + this.getHP() + " and has a current " + this.getSpecialName() + " of " + this.getSpecial();
   }
 
   //Get Methods

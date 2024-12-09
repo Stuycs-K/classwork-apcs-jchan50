@@ -2,8 +2,10 @@ public class Driver{
   public static void main(String[] args) {
     Adventurer p1 = new Worrier("Stuart",20);
     Adventurer p2 = new Worrier("Bob",5);
+    Adventurer p3 = new Worrier();
 
     System.out.println(p1);
+    System.out.println(p3);
     System.out.println("stuart hp " + p1.getHP());
     System.out.println(p2);
     System.out.println("bob hp " + p2.getHP());
