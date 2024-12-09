@@ -1,15 +1,24 @@
 public class Worrier extends Adventurer{
   private String specialName = "Anxiety";
-  private int special = 50, specialMax = 50;
+  private int special, specialMax;
 
-  public Worrier(String name){
-      super(name);
+  public Worrier(String name, int hp, int max){
+      super(name, hp);
+      this.special = max;
+      this.specialMax = max;
   }
 
   public Worrier(String name, int hp){
-      super(name, hp);
+    this(name,hp,"c++");
   }
 
+  public Worrier(String name){
+    this(name,12);
+  }
+
+  public Worrier(){
+    this("Carmack");
+  }
   //Abstract methods are meant to be implemented in child classes.
 
   /*
@@ -41,7 +50,7 @@ public class Worrier extends Adventurer{
     other.applyDamage(5);
     return this.getName() + " attacked " + other.getName();
   }
-
+//adding two randoms varies the distribution; ie two 6-sided die makes 7 more common
   //heall or buff the target adventurer
   public  String support(Adventurer other){
     other.setHP(other.getHP() + 1);
